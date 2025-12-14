@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon"
+    href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRF6grvZdQKFrExTR7WmQd1GfnI5m9ZvvXtcQ&s">
+
+  <title>About Us</title>
+  <style>
+    /* ===== Global Reset ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* ===== Body ===== */
+    body {
+      font-family: "Segoe UI", Roboto, Arial, sans-serif;
+      background-color: #f4f6fb;
+      color: #1f2937;
+      line-height: 1.7;
+      padding: 0;
+    }
+
+    /* ===== Navigation Bar ===== */
+    .navbar {
+      background-color: #0a1a36;
+      padding: 14px 0;
+      margin-bottom: 30px;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 22px;
+    }
+
+    .nav-links li a {
+      color: #ffffff;
+      text-decoration: none;
+      padding: 8px 14px;
+      border-radius: 6px;
+      font-size: 14.5px;
+      transition: 0.3s ease;
+    }
+
+    .nav-links li a:hover {
+      background-color: #1e40af;
+    }
+
+    .nav-links li a.active {
+      background-color: #0a1a36;
+      font-weight: 600;
+    }
+
+    /* ===== Page Container ===== */
+    body>h1,
+    section,
+    article,
+    aside,
+    ul,
+    ol {
+      max-width: 1100px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* ===== Headings ===== */
+    h1 {
+      text-align: center;
+      font-size: 32px;
+      color: #0a1a36;
+      margin: 30px 0;
+    }
+
+    h2,
+    h3 {
+      color: #0a1a36;
+      margin: 20px 0 10px;
+    }
+
+    /* ===== Content Cards ===== */
+    section,
+    article,
+    aside {
+      background: #ffffff;
+      padding: 20px 22px;
+      margin-bottom: 22px;
+      border-radius: 10px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+      border-left: 5px solid #0a1a36;
+    }
+
+    /* ===== Paragraphs ===== */
+    p {
+      font-size: 15.5px;
+      margin-bottom: 12px;
+    }
+
+    /* ===== Inline Highlight ===== */
+    mark {
+      background: #e0ecff;
+      padding: 3px 6px;
+      border-radius: 4px;
+    }
+
+    /* ===== Lists ===== */
+    ul,
+    ol {
+      margin: 10px auto 20px;
+      padding-left: 22px;
+    }
+
+    li {
+      margin: 6px 0;
+      font-size: 15px;
+    }
+
+    /* ===== Horizontal Rule ===== */
+    hr {
+      border: none;
+      border-top: 2px solid #e5e7eb;
+      margin: 28px auto;
+      max-width: 1100px;
+    }
+
+    /* ===== Links ===== */
+    a {
+      color: #1e40af;
+      font-weight: 600;
+    }
+
+    p a {
+      text-decoration: none;
+    }
+
+    p a:hover {
+      text-decoration: underline;
+    }
+
+    /* ===== Back to Home Button ===== */
+    body>a:last-of-type {
+      display: inline-block;
+      margin: 20px auto 40px;
+      background-color: #0a1a36;
+      color: #ffffff;
+      padding: 10px 18px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 14.5px;
+      transition: 0.3s ease;
+    }
+
+    body>a:last-of-type:hover {
+      background-color: #1e40af;
+    }
+
+    /* ===== Responsive Design ===== */
+    @media (max-width: 768px) {
+      .nav-links {
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      h1 {
+        font-size: 26px;
+      }
+
+      section,
+      article,
+      aside {
+        padding: 16px;
+      }
+    }
+
+    /* ===== Common Section Wrapper ===== */
+    .content-section {
+      max-width: 1100px;
+      margin: 30px auto;
+      padding: 22px 24px;
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+      border-left: 5px solid #0a1a36;
+    }
+
+    /* ===== Section Headings ===== */
+    .content-section h2,
+    .content-section h3 {
+      color: #0a1a36;
+      margin-bottom: 14px;
+      font-size: 22px;
+    }
+
+    /* ===== Lists Styling ===== */
+    .content-section ul,
+    .content-section ol {
+      margin-left: 22px;
+      margin-top: 10px;
+    }
+
+    .content-section li {
+      font-size: 15.5px;
+      margin: 6px 0;
+      line-height: 1.6;
+      color: #1f2937;
+    }
+
+    /* ===== Mission List (Highlighted) ===== */
+    .mission-list li {
+      background: #f4f6fb;
+      padding: 10px 12px;
+      border-radius: 6px;
+      margin-bottom: 8px;
+    }
+
+    /* ===== Facilities List (Grid Style) ===== */
+    .facilities-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .facilities-list li {
+      background: #f9fafb;
+      padding: 12px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      font-weight: 500;
+    }
+
+    /* ===== Responsive Design ===== */
+    @media (max-width: 768px) {
+      .content-section {
+        padding: 16px;
+        margin: 20px 12px;
+      }
+
+      .content-section h2,
+      .content-section h3 {
+        font-size: 20px;
+      }
+
+      .facilities-list {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <h1>About SJCIT</h1>
+  <section>
+    <p>
+      <b> <big>SJC Institute of Technology</big></b> <u>(SJCIT)</u> is an engineering and management college
+      in Chikkaballapur,
+      Karnataka, established in 1986 under the Sri Adichunchanagiri Shikshana Trust.<i> It is affiliated with
+        Visvesvaraya Technological University (VTU), accredited by the <strong> AICTE</strong>, and has
+        received <em>
+          NAAC accreditation.</em></i> The institute offers
+      undergraduate and postgraduate courses, emphasizing a blend of academics, industry skills, and
+      extracurricular activities on a 64-acre campus.
+    </p>
+  </section>
+  <!-- Aside Part -->
+  <aside>
+    <p>
+      SJCIT offers various engineering and management programs,
+      including undergraduate degrees in Computer Science, Mechanical,
+      Civil, Aeronautical, and other fields, as well as postgraduate degrees
+      and an MBA. <mark>The college is affiliated with Visvesvaraya Technological University (VTU)</mark>.
+      The institute is accredited by the National Assessment and Accreditation Council (NAAC)
+      and recognized by the All India Council for Technical Education (AICTE). It also holds an
+      ISO 9001:2015 certification. <a href="https://sjcit.ac.in/"> <small>Click here to visit our website
+          !!!</small></a>
+    </p>
+  </aside>
+  <!-- Article Section -->
+  <article>
+    <p>
+      A premier institute imparting technical education since 1986.
+      The college is situated on Bangalore – Hyderabad National Highway-NH7,
+      45 kms from Bangalore city about, 20 kms from Kempe Gowda International Airport
+      (Bangalore International Airport) and about 5 kms from Muddenahalli,
+      the birth place of Sir M. Visvesvaraya. The famous hill resort Nandi hill
+      is about 15 kms from the college.
+    </p>
+  </article>
+
+  <hr />
+
+
+  <div class="content-section">
+    <h2>Courses Offered</h2>
+    <ul>
+      <li>Computer Science</li>
+      <li>Mechanical</li>
+      <li>Civil</li>
+      <li>Aeronautical</li>
+      <li>Electronics and Communication</li>
+    </ul>
+  </div>
+
+  <div class="content-section">
+    <h2>List of Faculty Names</h2>
+    <ol>
+      <li>Priya</li>
+      <li>Karthik</li>
+      <li>Neha</li>
+      <li>Vikram</li>
+      <li>Ananya</li>
+    </ol>
+  </div>
+
+  <div class="content-section">
+    <h3>Mission</h3>
+    <ul class="mission-list">
+      <li>Providing Students with a Sound Knowledge in Fundamentals of their branch of Study.</li>
+      <li>Promoting Excellence in Teaching, Training, Research and Consultancy.</li>
+      <li>Exposing Students to Emerging Frontiers in various domains enabling Continuous Learning.</li>
+      <li>Developing Entrepreneurial acumen to venture into Innovative areas.</li>
+      <li>Imparting Value based Professional Education with a sense of Social Responsibility.</li>
+    </ul>
+  </div>
+
+  <div class="content-section">
+    <h2>Our Facilities</h2>
+    <ul class="facilities-list">
+      <li>Modern Classrooms</li>
+      <li>Library with Digital Resources</li>
+      <li>Sports and Cultural Activities</li>
+      <li>Experienced Faculty</li>
+    </ul>
+  </div>
+
+
+  <script src="js/main.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/form.js"></script>
+
+
+</body>
+
+</html>
