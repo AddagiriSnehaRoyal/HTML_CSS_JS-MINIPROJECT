@@ -1,246 +1,236 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/x-icon"
-    href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRF6grvZdQKFrExTR7WmQd1GfnI5m9ZvvXtcQ&s">
-  <title>College - Admission Portal</title>
-  <style>
-    /* ===== Reset & Base ===== */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: "Segoe UI", Roboto, Arial, sans-serif;
-      background-color: #f4f6fb;
-      color: #0a1a36;
-      line-height: 1.7;
-      padding: 20px;
-    }
-
-    /* ===== Headings ===== */
-    h1 {
-      text-align: center;
-      font-size: 32px;
-      color: #0a1a36;
-      margin-bottom: 20px;
-    }
-
-    h2,
-    h3 {
-      color: #0a1a36;
-      margin-bottom: 10px;
-    }
-
-    /* ===== Sections (Card Style) ===== */
-    section,
-    article,
-    aside {
-      background: #ffffff;
-      border-radius: 10px;
-      padding: 18px 20px;
-      margin-bottom: 20px;
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
-      border-left: 5px solid #0a1a36;
-    }
-
-    /* ===== Paragraphs ===== */
-    p {
-      font-size: 15.5px;
-      margin-bottom: 12px;
-      max-width: 1200px;
-    }
-
-    /* ===== Links ===== */
-    a {
-      text-decoration: none;
-      color: #ffffff;
-      background-color: #1e40af;
-      padding: 8px 14px;
-      border-radius: 6px;
-      font-size: 14px;
-      display: inline-block;
-      transition: all 0.3s ease;
-    }
-
-    a:hover {
-      background-color: #0a1a36;
-      transform: translateY(-1px);
-    }
-
-    /* Inline links inside paragraph */
-    p a {
-      background: none;
-      color: #1e40af;
-      padding: 0;
-      font-weight: 600;
-    }
-
-    p a:hover {
-      text-decoration: underline;
-    }
-
-    /* ===== Lists ===== */
-    ul,
-    ol {
-      margin-left: 22px;
-      margin-top: 8px;
-    }
-
-    li {
-      margin: 6px 0;
-      font-size: 15px;
-    }
-
-    /* ===== Horizontal Rule ===== */
-    hr {
-      border: none;
-      border-top: 2px solid #e5e7eb;
-      margin: 25px 0;
-    }
-
-    /* ===== Highlight ===== */
-    mark {
-      background: #e0ecff;
-      padding: 2px 5px;
-      border-radius: 4px;
-    }
-
-    /* ===== Footer Link ===== */
-    body>a:last-of-type {
-      margin-top: 20px;
-      display: inline-block;
-    }
-
-    /* ===== Responsive Design ===== */
-    @media (max-width: 768px) {
-      body {
-        padding: 14px;
-      }
-
-      h1 {
-        font-size: 26px;
-      }
-
-      section,
-      article,
-      aside {
-        padding: 16px;
-      }
-    }
-
-    /* ===== Navigation Bar (No Logo) ===== */
-    .navbar {
-      background-color: #0a1a36;
-      padding: 12px 0;
-      margin-bottom: 25px;
-
-    }
-
-    .nav-links {
-      list-style: none;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 22px;
-      padding: 0;
-    }
-
-    /* Navigation Links */
-    .nav-links li a {
-      color: #ffffff;
-      background: transparent;
-      padding: 8px 14px;
-      font-size: 16px;
-      border-radius: 6px;
-      font-weight: 600;
-      transition: all 0.3s ease;
-    }
-
-    /* Hover Effect */
-    .nav-links li a:hover {
-      background-color: #1e40af;
-    }
-
-    /* Active Page */
-    /* .nav-links li a.active {
-  background-color: #2563eb;
-  font-weight: 900;
-} */
-
-    /* ===== Responsive Navbar ===== */
-    @media (max-width: 768px) {
-      .nav-links {
-        flex-wrap: wrap;
-        gap: 12px;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Royal Academy - Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="icon" type="image/x-icon"
+            href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRF6grvZdQKFrExTR7WmQd1GfnI5m9ZvvXtcQ&s">
+    <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-  <center>
-    <h5>||Jai Shree Gurudev||</h5>
-  </center>
-  <center>
-    <h1><B><U>S J C INSTITUTE OF TECHNOLOGY</U></B></h1>
-  </center>
-  <center>
-    <p><b>An Autonomous Institution under VTU from 2024-25<br>
-        AICTE Approved, Accredited by NBA(CSE,ISE,ECE,ME,CV,AE) NAAC with A+ grade, QS I-Gauge Gold rated
-        P.B. No. 20, B.B. Road,<br>
-        Chickballapur- 562101, Karnataka.</b></p>
-  </center>
-  <HR />
-  <marquee behaviour="scroll" direction="left">
-    <h2>Admissions Open – Hurry Up for Enrollment!!!</h2>
-  </marquee>
-  <HR />
-
-  <nav class="navbar">
-    <div class="nav-container">
-      <!-- <div class="logo">
-      SJCIT
-    </div> -->
-
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html" class="active">About</a></li>
-        <li><a href="courses.html">Courses</a></li>
-        <li><a href="admission.html">Admissions</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href=""></a></li>
-      </ul>
+    <!-- Online/Offline Status Banner -->
+    <div id="offline-banner" class="offline-banner hidden">
+        <i class="fa fa-exclamation-triangle"></i> You are currently offline. Some features may not work.
     </div>
-  </nav>
 
-  <center>
-    <h1>Welcome to SJC INSTITUTE OF TECHNOLOGY</h1>
-    <h3>Student Admission Information Portal</h3>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/f/ff/SJC-Institute-of-Technology.jpg" alt="College Image"
-      height="200" width="600">
-  </center>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-top">
+                <div class="logo-section">
+                    <div class="logo-icon"><img src="https://png.pngtree.com/png-vector/20250408/ourmid/pngtree-global-education-logo-with-graduation-cap-and-book-png-image_15929049.png" width="60px"></div>
+                    <div class="logo-text">
+                        <h1>Royal Academy</h1>
+                        <p>Empowering Minds, Enriching Futures</p>
+                    </div>
+                </div>
+                <div class="header-actions">
+                    <span id="current-time" class="time-display"></span>
+                    <span id="screen-info" class="screen-info"></span>
+                    <button id="mobile-menu-toggle" class="mobile-menu-toggle">☰</button>
+                </div>
+            </div>
+            <nav id="main-nav" class="main-nav">
+                <a href="index.html" class="nav-link active"> Home</a>
+                <a href="about.html" class="nav-link"> About Us</a>
+                <a href="admission.html" class="nav-link"> Admission</a>
+                <a href="courses.html" class="nav-link"> Courses</a>
+                <a href="events.html" class="nav-link"> Events</a>
+                <a href="notices.html" class="nav-link"> Notices</a>
+                <a href="contact.html" class="nav-link"> Contact</a>
+            </nav>
+        </div>
+    </header>
 
-  <hr>
+    <!-- Main Content -->
+    <main class="container main-content">
+        <!-- Hero Section -->
+        <section class="hero-section card">
+            <h2 class="hero-title">Welcome to Royal Academy</h2>
+            <button onclick="window.location.href='admission.html'" class="btn btn-primary btn-large">
+                Apply Now
+            </button>
+        </section>
 
-  <center>
-    <p>Explore our website to get complete details about the admission process and academic programs.</p>
-  </center>
-  <center>
-    <footer>
-      <p>© 2025 SJC-Institute-of-Technology | All Rights Reserved</p>
+        <!-- Stats Section -->
+        <section class="stats-section">
+            <div class="stat-card card">
+                <div class="stat-number" id="stat-students">0</div>
+                <div class="stat-label">Students</div>
+            </div>
+            <div class="stat-card card">
+                <div class="stat-number" id="stat-courses">0</div>
+                <div class="stat-label">Courses</div>
+            </div>
+            <div class="stat-card card">
+                <div class="stat-number" id="stat-faculty">0</div>
+                <div class="stat-label">Faculty Members</div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features-section">
+            <h2 class="section-title">Why Choose Us?</h2>
+            <div class="features-grid">
+                <div class="feature-card card">
+                    <div class="feature-icon"><img src="https://static.vecteezy.com/system/resources/previews/021/802/120/non_2x/teacher-icon-style-vector.jpg" width="90px"></div>
+                    <h3>World-Class Faculty</h3>
+                    <p>Learn from industry experts and renowned professors</p>
+                </div>
+                <div class="feature-card card">
+                    <div class="feature-icon"><img src="https://png.pngtree.com/png-vector/20191003/ourmid/pngtree-beautiful-college-vector-line-icon-png-image_1788050.jpg" width="90px"></div>
+                    <h3>Modern Infrastructure</h3>
+                    <p>State-of-the-art labs, libraries, and facilities</p>
+                </div>
+                <div class="feature-card card">
+                    <div class="feature-icon"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQeeiEEOSAXjuIDviQf03Q_dODRPF_GaGh4w&s" width="100px"></div>
+                    <h3>Industry Partnerships</h3>
+                    <p>Strong connections with leading companies</p>
+                </div>
+                <div class="feature-card card">
+                    <div class="feature-icon"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfTTmq7T0xtb9uhONU62okYq4wg_XOEoo1RA&s" width="90px"></div>
+                    <h3>Research Excellence</h3>
+                    <p>Cutting-edge research opportunities</p>
+                </div>
+                <div class="feature-card card">
+                    <div class="feature-icon"><img src="https://png.pngtree.com/png-vector/20191027/ourmid/pngtree-global-icon-isolated-on-background-png-image_1875250.jpg" width="90px"></div>
+                    <h3>Global Recognition</h3>
+                    <p>Internationally accredited programs</p>
+                </div>
+                <div class="feature-card card">
+                    <div class="feature-icon"><img src="https://cdn-icons-png.flaticon.com/512/9552/9552377.png" width="90px"></div>
+                    <h3>Career Support</h3>
+                    <p>Dedicated placement and career guidance</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Latest News Section -->
+        <section class="news-section">
+            <h2 class="section-title">Latest Updates</h2>
+            <div id="latest-news" class="news-grid">
+                <!-- News will be loaded dynamically -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4><i class="fa fa-globe"></i> Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="admission.html">Admission</a></li>
+                        <li><a href="courses.html">Courses</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4><i class="fas fa-file"></i> Resources</h4>
+                    <ul>
+                        <li><a href="#">Student Portal</a></li>
+                        <li><a href="#">Faculty Directory</a></li>
+                        <li><a href="#">Library</a></li>
+                        <li><a href="#">Campus Map</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4><i class="fa fa-address-book"></i> Connect With Us</h4>
+                    <p>Follow us on social media for latest updates and news</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Excellence University. All rights reserved.</p>
+                <p id="footer-info" class="footer-info"></p>
+            </div>
+        </div>
     </footer>
-  </center>
 
-  <script src="js/main.js"></script>
-  <script src="js/ui.js"></script>
-  <script src="js/form.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // Page-specific JavaScript
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animate stats
+            animateStats();
+            
+            // Load latest news
+            loadLatestNews();
+        });
 
+        // Animate statistics counters
+        function animateStats() {
+            const targets = {
+                students: 5000,
+                courses: 50,
+                faculty: 200
+            };
+            
+            const duration = 2000; // 2 seconds
+            const steps = 60;
+            const interval = duration / steps;
+            
+            Object.keys(targets).forEach(key => {
+                const element = document.getElementById(`stat-${key}`);
+                const target = targets[key];
+                const increment = target / steps;
+                let current = 0;
+                
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        element.textContent = target.toLocaleString() + '+';
+                        clearInterval(timer);
+                    } else {
+                        element.textContent = Math.floor(current).toLocaleString();
+                    }
+                }, interval);
+            });
+        }
+
+        // Load latest news using async/await
+        async function loadLatestNews() {
+            const newsContainer = document.getElementById('latest-news');
+            newsContainer.innerHTML = '<p class="loading">Loading latest updates...</p>';
+            
+            // Simulate API call with setTimeout (callback pattern)
+            await new Promise(resolve => setTimeout(resolve, 1000));
+            
+            const news = [
+                {
+                    title: 'Admission Open for 2025',
+                    date: '2025-01-10',
+                    content: 'Applications are now open for the 2025 academic year. Early bird discounts available!'
+                },
+                {
+                    title: 'New Research Center Inaugurated',
+                    date: '2025-01-08',
+                    content: 'Our state-of-the-art AI Research Center is now operational with advanced facilities.'
+                },
+                {
+                    title: 'International Collaboration',
+                    date: '2025-01-05',
+                    content: 'Partnership signed with leading universities from USA, UK, and Australia.'
+                }
+            ];
+            
+            newsContainer.innerHTML = news.map(item => `
+                <div class="news-card card">
+                    <div class="news-date">${formatDate(item.date)}</div>
+                    <h3>${item.title}</h3>
+                    <p>${item.content}</p>
+                </div>
+            `).join('');
+        }
+
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            const options = { year: 'numeric', month: 'short', day: 'numeric' };
+            return date.toLocaleDateString('en-US', options);
+        }
+    </script>
 </body>
-
 </html>

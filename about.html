@@ -1,350 +1,239 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/x-icon"
-    href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRF6grvZdQKFrExTR7WmQd1GfnI5m9ZvvXtcQ&s">
-
-  <title>About Us</title>
-  <style>
-    /* ===== Global Reset ===== */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    /* ===== Body ===== */
-    body {
-      font-family: "Segoe UI", Roboto, Arial, sans-serif;
-      background-color: #f4f6fb;
-      color: #1f2937;
-      line-height: 1.7;
-      padding: 0;
-    }
-
-    /* ===== Navigation Bar ===== */
-    .navbar {
-      background-color: #0a1a36;
-      padding: 14px 0;
-      margin-bottom: 30px;
-    }
-
-    .nav-links {
-      list-style: none;
-      display: flex;
-      justify-content: center;
-      gap: 22px;
-    }
-
-    .nav-links li a {
-      color: #ffffff;
-      text-decoration: none;
-      padding: 8px 14px;
-      border-radius: 6px;
-      font-size: 14.5px;
-      transition: 0.3s ease;
-    }
-
-    .nav-links li a:hover {
-      background-color: #1e40af;
-    }
-
-    .nav-links li a.active {
-      background-color: #0a1a36;
-      font-weight: 600;
-    }
-
-    /* ===== Page Container ===== */
-    body>h1,
-    section,
-    article,
-    aside,
-    ul,
-    ol {
-      max-width: 1100px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    /* ===== Headings ===== */
-    h1 {
-      text-align: center;
-      font-size: 32px;
-      color: #0a1a36;
-      margin: 30px 0;
-    }
-
-    h2,
-    h3 {
-      color: #0a1a36;
-      margin: 20px 0 10px;
-    }
-
-    /* ===== Content Cards ===== */
-    section,
-    article,
-    aside {
-      background: #ffffff;
-      padding: 20px 22px;
-      margin-bottom: 22px;
-      border-radius: 10px;
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
-      border-left: 5px solid #0a1a36;
-    }
-
-    /* ===== Paragraphs ===== */
-    p {
-      font-size: 15.5px;
-      margin-bottom: 12px;
-    }
-
-    /* ===== Inline Highlight ===== */
-    mark {
-      background: #e0ecff;
-      padding: 3px 6px;
-      border-radius: 4px;
-    }
-
-    /* ===== Lists ===== */
-    ul,
-    ol {
-      margin: 10px auto 20px;
-      padding-left: 22px;
-    }
-
-    li {
-      margin: 6px 0;
-      font-size: 15px;
-    }
-
-    /* ===== Horizontal Rule ===== */
-    hr {
-      border: none;
-      border-top: 2px solid #e5e7eb;
-      margin: 28px auto;
-      max-width: 1100px;
-    }
-
-    /* ===== Links ===== */
-    a {
-      color: #1e40af;
-      font-weight: 600;
-    }
-
-    p a {
-      text-decoration: none;
-    }
-
-    p a:hover {
-      text-decoration: underline;
-    }
-
-    /* ===== Back to Home Button ===== */
-    body>a:last-of-type {
-      display: inline-block;
-      margin: 20px auto 40px;
-      background-color: #0a1a36;
-      color: #ffffff;
-      padding: 10px 18px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-size: 14.5px;
-      transition: 0.3s ease;
-    }
-
-    body>a:last-of-type:hover {
-      background-color: #1e40af;
-    }
-
-    /* ===== Responsive Design ===== */
-    @media (max-width: 768px) {
-      .nav-links {
-        flex-wrap: wrap;
-        gap: 12px;
-      }
-
-      h1 {
-        font-size: 26px;
-      }
-
-      section,
-      article,
-      aside {
-        padding: 16px;
-      }
-    }
-
-    /* ===== Common Section Wrapper ===== */
-    .content-section {
-      max-width: 1100px;
-      margin: 30px auto;
-      padding: 22px 24px;
-      background-color: #ffffff;
-      border-radius: 10px;
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
-      border-left: 5px solid #0a1a36;
-    }
-
-    /* ===== Section Headings ===== */
-    .content-section h2,
-    .content-section h3 {
-      color: #0a1a36;
-      margin-bottom: 14px;
-      font-size: 22px;
-    }
-
-    /* ===== Lists Styling ===== */
-    .content-section ul,
-    .content-section ol {
-      margin-left: 22px;
-      margin-top: 10px;
-    }
-
-    .content-section li {
-      font-size: 15.5px;
-      margin: 6px 0;
-      line-height: 1.6;
-      color: #1f2937;
-    }
-
-    /* ===== Mission List (Highlighted) ===== */
-    .mission-list li {
-      background: #f4f6fb;
-      padding: 10px 12px;
-      border-radius: 6px;
-      margin-bottom: 8px;
-    }
-
-    /* ===== Facilities List (Grid Style) ===== */
-    .facilities-list {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 14px;
-      list-style: none;
-      padding-left: 0;
-    }
-
-    .facilities-list li {
-      background: #f9fafb;
-      padding: 12px;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-      font-weight: 500;
-    }
-
-    /* ===== Responsive Design ===== */
-    @media (max-width: 768px) {
-      .content-section {
-        padding: 16px;
-        margin: 20px 12px;
-      }
-
-      .content-section h2,
-      .content-section h3 {
-        font-size: 20px;
-      }
-
-      .facilities-list {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Royal Academy</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="icon" type="image/x-icon"
+            href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRF6grvZdQKFrExTR7WmQd1GfnI5m9ZvvXtcQ&s">
+    <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-  <h1>About SJCIT</h1>
-  <section>
-    <p>
-      <b> <big>SJC Institute of Technology</big></b> <u>(SJCIT)</u> is an engineering and management college
-      in Chikkaballapur,
-      Karnataka, established in 1986 under the Sri Adichunchanagiri Shikshana Trust.<i> It is affiliated with
-        Visvesvaraya Technological University (VTU), accredited by the <strong> AICTE</strong>, and has
-        received <em>
-          NAAC accreditation.</em></i> The institute offers
-      undergraduate and postgraduate courses, emphasizing a blend of academics, industry skills, and
-      extracurricular activities on a 64-acre campus.
-    </p>
-  </section>
-  <!-- Aside Part -->
-  <aside>
-    <p>
-      SJCIT offers various engineering and management programs,
-      including undergraduate degrees in Computer Science, Mechanical,
-      Civil, Aeronautical, and other fields, as well as postgraduate degrees
-      and an MBA. <mark>The college is affiliated with Visvesvaraya Technological University (VTU)</mark>.
-      The institute is accredited by the National Assessment and Accreditation Council (NAAC)
-      and recognized by the All India Council for Technical Education (AICTE). It also holds an
-      ISO 9001:2015 certification. <a href="https://sjcit.ac.in/"> <small>Click here to visit our website
-          !!!</small></a>
-    </p>
-  </aside>
-  <!-- Article Section -->
-  <article>
-    <p>
-      A premier institute imparting technical education since 1986.
-      The college is situated on Bangalore – Hyderabad National Highway-NH7,
-      45 kms from Bangalore city about, 20 kms from Kempe Gowda International Airport
-      (Bangalore International Airport) and about 5 kms from Muddenahalli,
-      the birth place of Sir M. Visvesvaraya. The famous hill resort Nandi hill
-      is about 15 kms from the college.
-    </p>
-  </article>
+    <div id="offline-banner" class="offline-banner hidden">
+        <i class="fa fa-exclamation-triangle"></i> You are currently offline. Some features may not work.
+    </div>
 
-  <hr />
+    <header class="header">
+        <div class="container">
+            <div class="header-top">
+                <div class="logo-section">
+                    <div class="logo-icon"><img src="https://png.pngtree.com/png-vector/20250408/ourmid/pngtree-global-education-logo-with-graduation-cap-and-book-png-image_15929049.png" width="60px"></div>
+                    <div class="logo-text">
+                        <h1>Royal Academy</h1>
+                        <p>Empowering Minds, Enriching Futures</p>
+                    </div>
+                </div>
+                <div class="header-actions">
+                    <span id="current-time" class="time-display"></span>
+                    <span id="screen-info" class="screen-info"></span>
+                    <button id="mobile-menu-toggle" class="mobile-menu-toggle">☰</button>
+                </div>
+            </div>
+            <nav id="main-nav" class="main-nav">
+                <a href="index.html" class="nav-link"> Home</a>
+                <a href="about.html" class="nav-link active"> About Us</a>
+                <a href="admission.html" class="nav-link">Admission</a>
+                <a href="courses.html" class="nav-link"> Courses</a>
+                <a href="events.html" class="nav-link"> Events</a>
+                <a href="notices.html" class="nav-link"> Notices</a>
+                <a href="contact.html" class="nav-link"> Contact</a>
+            </nav>
+        </div>
+    </header>
 
+    <main class="container main-content" >
+        <div class="page-header">
+            <h1>About Royal Academy</h1>
+            <p class="breadcrumb">Home > About Us</p>
+        </div>
 
-  <div class="content-section">
-    <h2>Courses Offered</h2>
-    <ul>
-      <li>Computer Science</li>
-      <li>Mechanical</li>
-      <li>Civil</li>
-      <li>Aeronautical</li>
-      <li>Electronics and Communication</li>
-    </ul>
-  </div>
+        <section class="content-section card" style="margin: 15px">
+            <h2>Our Story</h2>
+            <p>Founded in 1985, Royal Academy has been at the forefront of higher education, committed to nurturing talent and fostering innovation. With over three decades of academic excellence, we have established ourselves as a leading institution in shaping future leaders.</p>
+            
+            <p>Our campus spans across 150 acres of lush green landscape, housing modern facilities including advanced laboratories, extensive libraries, sports complexes, and comfortable residential halls. We believe in providing a holistic educational experience that goes beyond textbooks.</p>
+        </section>
 
-  <div class="content-section">
-    <h2>List of Faculty Names</h2>
-    <ol>
-      <li>Priya</li>
-      <li>Karthik</li>
-      <li>Neha</li>
-      <li>Vikram</li>
-      <li>Ananya</li>
-    </ol>
-  </div>
+        <section class="content-section card" style="margin: 15px">
+            <h2>Our Mission</h2>
+            <p>To provide transformative education that empowers students with knowledge, skills, and values to excel in their chosen fields and contribute meaningfully to society. We strive to create an environment where curiosity is encouraged, innovation is celebrated, and excellence is the standard.</p>
+        </section>
 
-  <div class="content-section">
-    <h3>Mission</h3>
-    <ul class="mission-list">
-      <li>Providing Students with a Sound Knowledge in Fundamentals of their branch of Study.</li>
-      <li>Promoting Excellence in Teaching, Training, Research and Consultancy.</li>
-      <li>Exposing Students to Emerging Frontiers in various domains enabling Continuous Learning.</li>
-      <li>Developing Entrepreneurial acumen to venture into Innovative areas.</li>
-      <li>Imparting Value based Professional Education with a sense of Social Responsibility.</li>
-    </ul>
-  </div>
+        <section class="content-section card" style="margin: 15px">
+            <h2>Our Vision</h2>
+            <p>To be a globally recognized institution that sets standards in education, research, and innovation, creating leaders who drive positive change in the world. We envision a future where our graduates are not just professionally successful but also socially responsible citizens.</p>
+        </section>
 
-  <div class="content-section">
-    <h2>Our Facilities</h2>
-    <ul class="facilities-list">
-      <li>Modern Classrooms</li>
-      <li>Library with Digital Resources</li>
-      <li>Sports and Cultural Activities</li>
-      <li>Experienced Faculty</li>
-    </ul>
-  </div>
+        <section class="content-section card" style="margin: 15px">
+            <h2>Core Values</h2>
+            <div class="values-grid">
+                <div class="value-item">
+                    <div class="value-icon"><img src="https://www.nicepng.com/png/full/302-3020666_academic-excellence-and-educational-equity-every-student-angiography.png" width="90px"></div>
+                    <h3>Excellence</h3>
+                    <p>Striving for the highest standards in all endeavors</p>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon"><img src="https://static.thenounproject.com/png/3201900-200.png" width="90px"></div>
+                    <h3>Integrity</h3>
+                    <p>Upholding honesty and ethical conduct</p>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon"><img src="https://cdn-icons-png.flaticon.com/512/10316/10316691.png" width="90px"></div>
+                    <h3>Innovation</h3>
+                    <p>Encouraging creativity and forward thinking</p>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon"><img src="https://cdn-icons-png.freepik.com/512/15189/15189163.png" width="90px"></div>
+                    <h3>Diversity</h3>
+                    <p>Embracing inclusion and different perspectives</p>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon"><img src="https://cdn-icons-png.flaticon.com/512/6789/6789406.png" width="90px"></div>
+                    <h3>Social Responsibility</h3>
+                    <p>Contributing positively to society</p>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon"><img src="https://cdn-icons-png.freepik.com/256/9159/9159211.png?semt=ais_white_label" width="90px"></div>
+                    <h3>Collaboration</h3>
+                    <p>Fostering teamwork and mutual support</p>
+                </div>
+            </div>
+        </section>
 
+        <section class="content-section card" style="margin: 15px">
+            <h2>Accreditations & Recognition</h2>
+            <p>Our programs are accredited by prestigious national and international bodies, ensuring quality education that meets global standards:</p>
+            <ul class="accreditation-list">
+                <li><strong>NAAC:</strong> A+ Grade accreditation</li>
+                <li><strong>NBA:</strong> Accredited engineering programs</li>
+                <li><strong>UGC:</strong> Recognized by University Grants Commission</li>
+                <li><strong>ABET:</strong> International engineering accreditation</li>
+                <li><strong>AACSB:</strong> Business school accreditation</li>
+                <li><strong>QS Rankings:</strong> Ranked among top 500 universities globally</li>
+            </ul>
+        </section>
 
-  <script src="js/main.js"></script>
-  <script src="js/ui.js"></script>
-  <script src="js/form.js"></script>
+        <section class="content-section card" style="margin: 15px">
+            <h2>Leadership</h2>
+            <div class="leadership-grid">
+                <div class="leader-card">
+                    <div class="leader-avatar"><img src="https://img.freepik.com/premium-photo/portrait-smiling-confident-businessman-white-shirt-isolated-white_214162-342.jpg" width="90px"></div>
+                    <h3>Dr. John Smith</h3>
+                    <p class="leader-title">Chancellor</p>
+                    <p>Leading the institution with 30+ years of academic excellence</p>
+                </div>
+                <div class="leader-card">
+                    <div class="leader-avatar"><img src="https://img.freepik.com/free-psd/expressive-woman-gesturing_23-2150198673.jpg?semt=ais_hybrid&w=740&q=80" width="90px"></div>
+                    <h3>Dr. Sarah Johnson</h3>
+                    <p class="leader-title">Vice Chancellor</p>
+                    <p>Driving innovation in curriculum and research</p>
+                </div>
+                <div class="leader-card">
+                    <div class="leader-avatar"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEpJfwBk_i-I9HrdsDs3vkFMOT0Uq7vtI72A&s" width="90px"></div>
+                    <h3>Prof. Michael Brown</h3>
+                    <p class="leader-title">Dean of Academics</p>
+                    <p>Ensuring academic quality and student success</p>
+                </div>
+            </div>
+        </section>
 
+        <!-- FAQ Section -->
+        <section class="content-section card" style="margin: 15px">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        What makes Excellence University unique?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Our unique blend of academic rigor, industry partnerships, research opportunities, and holistic development programs sets us apart. We focus on creating well-rounded individuals ready for global challenges.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        How many students are enrolled?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We have over 5,000 students from diverse backgrounds, representing all states and several countries, creating a vibrant multicultural campus environment.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        What is your placement record?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We maintain a consistent 95% placement record with students securing positions in top companies like Google, Microsoft, Amazon, and leading Indian corporates.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+    </main>
 
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4><i class="fa fa-globe"></i> Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="admission.html">Admission</a></li>
+                        <li><a href="courses.html">Courses</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4><i class="fas fa-file"></i> Resources</h4>
+                    <ul>
+                        <li><a href="#">Student Portal</a></li>
+                        <li><a href="#">Faculty Directory</a></li>
+                        <li><a href="#">Library</a></li>
+                        <li><a href="#">Campus Map</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4><i class="fa fa-address-book"></i> Connect With Us</h4>
+                    <p>Follow us on social media for latest updates and news</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Excellence University. All rights reserved.</p>
+                <p id="footer-info" class="footer-info"></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        function toggleFaq(button) {
+            const faqItem = button.parentElement;
+            const answer = faqItem.querySelector('.faq-answer');
+            const icon = button.querySelector('.faq-icon');
+            
+            // Close all other FAQs
+            document.querySelectorAll('.faq-item').forEach(item => {
+                if (item !== faqItem && item.classList.contains('active')) {
+                    item.classList.remove('active');
+                    item.querySelector('.faq-answer').style.maxHeight = null;
+                    item.querySelector('.faq-icon').textContent = '+';
+                }
+            });
+            
+            // Toggle current FAQ
+            faqItem.classList.toggle('active');
+            
+            if (faqItem.classList.contains('active')) {
+                answer.style.maxHeight = answer.scrollHeight + 'px';
+                icon.textContent = '-';
+            } else {
+                answer.style.maxHeight = null;
+                icon.textContent = '+';
+            }
+        }
+    </script>
 </body>
-
 </html>

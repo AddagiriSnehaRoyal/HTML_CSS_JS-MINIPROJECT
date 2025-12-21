@@ -1,152 +1,775 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/x-icon"
-    href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRF6grvZdQKFrExTR7WmQd1GfnI5m9ZvvXtcQ&s">
-  <title>Admission Process</title>
-  <style>
-    /* ===== Reset ===== */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    /* ===== Body ===== */
-    body {
-      font-family: "Segoe UI", Roboto, Arial, sans-serif;
-      background-color: #f4f6fb;
-      color: #1f2937;
-      line-height: 1.7;
-      padding: 0;
-    }
-
-    /* ===== Page Container ===== */
-    body>h1,
-    body>h3,
-    body>ul,
-    body>ol,
-    body>p {
-      max-width: 900px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    /* ===== Headings ===== */
-    h1 {
-      text-align: center;
-      font-size: 32px;
-      color: #0a1a36;
-      margin: 30px 0;
-    }
-
-    h3 {
-      color: #0a1a36;
-      margin: 25px 0 10px;
-      font-size: 20px;
-    }
-
-    /* ===== Content Cards ===== */
-    ul,
-    ol {
-      background: #ffffff;
-      padding: 18px 22px;
-      border-radius: 10px;
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
-      border-left: 5px solid #0a1a36;
-      margin-bottom: 22px;
-    }
-
-    /* ===== List Items ===== */
-    li {
-      margin: 8px 0;
-      font-size: 15.5px;
-    }
-
-    /* ===== Paragraph ===== */
-    p {
-      background: #ffffff;
-      padding: 16px 20px;
-      border-radius: 10px;
-      max-width: 900px;
-      margin: 0 auto 25px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-      border-left: 5px solid #0a1a36;
-      font-size: 15.5px;
-    }
-
-    /* ===== Links (Buttons) ===== */
-    a {
-      display: inline-block;
-      margin: 10px auto;
-      background-color: #0a1a36;
-      color: #ffffff;
-      padding: 10px 18px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-size: 14.5px;
-      transition: 0.3s ease;
-    }
-
-    a:hover {
-      background-color: #1e40af;
-    }
-
-    /* Center buttons */
-    body>a {
-      display: block;
-      width: fit-content;
-    }
-
-    /* ===== Responsive ===== */
-    @media (max-width: 768px) {
-      h1 {
-        font-size: 26px;
-      }
-
-      h3 {
-        font-size: 18px;
-      }
-
-      ul,
-      ol,
-      p {
-        padding: 16px;
-        margin: 0 12px 20px;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admission Process - Royal Academy</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="icon" type="image/x-icon"
+            href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRF6grvZdQKFrExTR7WmQd1GfnI5m9ZvvXtcQ&s">
+    <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-  <h1>Admission Process</h1>
+    <div id="offline-banner" class="offline-banner hidden">
+        <i class="fa fa-exclamation-triangle"></i> You are currently offline. Some features may not work.
+    </div>
 
-  <h3>Eligibility Criteria</h3>
-  <ul>
-    <li>Minimum 50% marks in qualifying examination</li>
-    <li>Valid ID and Transfer Certificate</li>
-  </ul>
+    <header class="header">
+        <div class="container">
+            <div class="header-top">
+                <div class="logo-section">
+                    <div class="logo-icon"><img src="https://png.pngtree.com/png-vector/20250408/ourmid/pngtree-global-education-logo-with-graduation-cap-and-book-png-image_15929049.png" width="60px"></div>
+                    <div class="logo-text">
+                        <h1>Royal Academy</h1>
+                        <p>Empowering Minds, Enriching Futures</p>
+                    </div>
+                </div>
+                <div class="header-actions">
+                    <span id="current-time" class="time-display"></span>
+                    <span id="screen-info" class="screen-info"></span>
+                    <button id="mobile-menu-toggle" class="mobile-menu-toggle">☰</button>
+                </div>
+            </div>
+            <nav id="main-nav" class="main-nav">
+                <a href="index.html" class="nav-link"> Home</a>
+                <a href="about.html" class="nav-link"> About Us</a>
+                <a href="admission.html" class="nav-link active"> Admission</a>
+                <a href="courses.html" class="nav-link"> Courses</a>
+                <a href="events.html" class="nav-link"> Events</a>
+                <a href="notices.html" class="nav-link"> Notices</a>
+                <a href="contact.html" class="nav-link"> Contact</a>
+            </nav>
+        </div>
+    </header>
 
-  <h3>Steps to Apply</h3>
-  <ol>
-    <li>Fill the online application form</li>
-    <li>Submit required documents</li>
-    <li>Appear for counseling / interview</li>
-    <li>Complete fee payment for admission confirmation</li>
-  </ol>
+    <main class="container main-content">
+        <div class="page-header">
+            <h1>Admission Process 2025</h1>
+            <p class="breadcrumb">Home > Admission Process</p>
+            <button onclick="scrollToApplicationForm()" class="btn btn-primary" style="margin-top: 16px;">
+                 Apply Now - Fill Application Form
+            </button>
+        </div>
 
-  <p><strong>Note:</strong> Admissions are based on merit and seat availability.</p>
+        <!-- Admission Steps -->
+        <section class="admission-steps">
+            <h2 class="section-title">How to Apply</h2>
+            <div class="steps-container">
+                <div class="step-card card">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Online Application</h3>
+                        <p>Fill the online application form available on our website. Provide accurate personal and academic details. Ensure all required fields are completed.</p>
+                        <button onclick="window.location.href='contact.html'" class="btn btn-secondary">Start Application</button>
+                    </div>
+                </div>
 
-  <a href="enquiry.html">Click here for Enquiry Form</a><br><br>
-  <a href="index.html">⬅ Back to Home</a>
+                <div class="step-card card">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Document Submission</h3>
+                        <p>Upload scanned copies of required documents including mark sheets, ID proof, and photographs. All documents must be clear and legible.</p>
+                        <ul class="document-list">
+                            <li>10th & 12th Mark Sheets</li>
+                            <li>Transfer Certificate</li>
+                            <li>ID Proof (Aadhar/Passport)</li>
+                            <li>Recent Photographs</li>
+                        </ul>
+                    </div>
+                </div>
 
-  <script src="js/main.js"></script>
-  <script src="js/ui.js"></script>
-  <script src="js/form.js"></script>
+                <div class="step-card card">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Entrance Examination</h3>
+                        <p>Appear for our entrance test or submit scores of national level exams like SAT, JEE, or NEET as applicable. The exam tests aptitude, reasoning, and subject knowledge.</p>
+                    </div>
+                </div>
 
+                <div class="step-card card">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Personal Interview</h3>
+                        <p>Shortlisted candidates will be called for a personal interview to assess aptitude and interests. This helps us understand your goals and aspirations.</p>
+                    </div>
+                </div>
+
+                <div class="step-card card">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h3>Admission Confirmation</h3>
+                        <p>Pay the admission fee and complete the enrollment process to secure your seat. Welcome to Excellence University!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Important Dates -->
+        <section class="dates-section card">
+            <h2>Important Dates for 2025</h2>
+            <div class="dates-grid">
+                <div class="date-item">
+                    <div class="date-icon"><img src="https://png.pngtree.com/png-vector/20190720/ourmid/pngtree-forms-icon-for-your-project-png-image_1552988.jpg" width="90px"></div>
+                    <div class="date-info">
+                        <h4>Application Start</h4>
+                        <p class="date-value">January 1, 2025</p>
+                    </div>
+                </div>
+                <div class="date-item">
+                    <div class="date-icon"><img src="https://img.freepik.com/premium-vector/application-form-vector-icon-can-be-used-travel-agency-iconset_717774-137589.jpg" width="90px"></div>
+                    <div class="date-info">
+                        <h4>Application Deadline</h4>
+                        <p class="date-value">March 31, 2025</p>
+                    </div>
+                </div>
+                <div class="date-item">
+                    <div class="date-icon"><img src="https://static.vecteezy.com/system/resources/previews/024/672/811/non_2x/checklist-with-pencil-icon-illustration-test-icon-vector.jpg" width="90px"></div>
+                    <div class="date-info">
+                        <h4>Entrance Exam</h4>
+                        <p class="date-value">April 15, 2025</p>
+                    </div>
+                </div>
+                <div class="date-item">
+                    <div class="date-icon"><img src="https://img.freepik.com/premium-vector/result-stamp-icon-design-vector-template_1146812-2666.jpg" width="90px"></div>
+                    <div class="date-info">
+                        <h4>Results Announcement</h4>
+                        <p class="date-value">May 1, 2025</p>
+                    </div>
+                </div>
+                <div class="date-item">
+                    <div class="date-icon"><img src="https://static.vecteezy.com/system/resources/thumbnails/053/808/502/small_2x/training-seminar-icon-illustration-vector.jpg" width="90px"></div>
+                    <div class="date-info">
+                        <h4>Classes Begin</h4>
+                        <p class="date-value">June 15, 2025</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Eligibility Criteria -->
+        <section class="eligibility-section card">
+            <h2>Eligibility Criteria</h2>
+            <div class="eligibility-tabs">
+                <button class="tab-button active" onclick="showTab('undergraduate')">Undergraduate</button>
+                <button class="tab-button" onclick="showTab('postgraduate')">Postgraduate</button>
+                <button class="tab-button" onclick="showTab('doctoral')">Doctoral</button>
+            </div>
+
+            <div id="undergraduate" class="tab-content active">
+                <h3>Undergraduate Programs (B.Tech, B.Sc, BBA, etc.)</h3>
+                <ul>
+                    <li>Minimum 60% marks in 10+2 from a recognized board</li>
+                    <li>Valid score in entrance examination (JEE/SAT) or university entrance test</li>
+                    <li>Age: Between 17-25 years as on July 1, 2025</li>
+                    <li>Proficiency in English language</li>
+                </ul>
+            </div>
+
+            <div id="postgraduate" class="tab-content">
+                <h3>Postgraduate Programs (M.Tech, MBA, M.Sc, etc.)</h3>
+                <ul>
+                    <li>Bachelor's degree with minimum 55% marks from a recognized university</li>
+                    <li>Valid GATE/CAT/GRE score or university entrance test</li>
+                    <li>Work experience (preferred for MBA - 2 years)</li>
+                    <li>Statement of Purpose and Letters of Recommendation</li>
+                </ul>
+            </div>
+
+            <div id="doctoral" class="tab-content">
+                <h3>Doctoral Programs (Ph.D.)</h3>
+                <ul>
+                    <li>Master's degree with minimum 60% marks in relevant field</li>
+                    <li>Research proposal in area of interest</li>
+                    <li>Qualify in university entrance test and interview</li>
+                    <li>Publications in peer-reviewed journals (preferred)</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Application Fees -->
+        <section class="fees-section card">
+            <h2>Application Fees</h2>
+            <table class="fees-table">
+                <thead>
+                    <tr>
+                        <th>Program Level</th>
+                        <th>General Category</th>
+                        <th>Reserved Category</th>
+                        <th>International</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Undergraduate</td>
+                        <td>₹1,500</td>
+                        <td>₹750</td>
+                        <td>$50</td>
+                    </tr>
+                    <tr>
+                        <td>Postgraduate</td>
+                        <td>₹2,000</td>
+                        <td>₹1,000</td>
+                        <td>$75</td>
+                    </tr>
+                    <tr>
+                        <td>Doctoral</td>
+                        <td>₹2,500</td>
+                        <td>₹1,250</td>
+                        <td>$100</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="note">* Application fee is non-refundable. Early applicants (before Jan 20) get 10% discount.</p>
+        </section>
+
+        <!-- Scholarships -->
+        <section class="scholarships-section card">
+            <h2>Scholarship Opportunities</h2>
+            <div class="scholarships-grid">
+                <div class="scholarship-card">
+                    <h3><i class="fa fa-graduation-cap"></i> Merit Scholarship</h3>
+                    <p class="scholarship-amount">Up to 100% Tuition Fee Waiver</p>
+                    <p>For students with exceptional academic performance in qualifying exams</p>
+                </div>
+                <div class="scholarship-card">
+                    <h3><i class="fas fa-hand-holding-dollar"></i> Need-Based Scholarship</h3>
+                    <p class="scholarship-amount">Up to 50% Tuition Fee Waiver</p>
+                    <p>For economically disadvantaged students with good academic record</p>
+                </div>
+                <div class="scholarship-card">
+                    <h3><i class="fas fa-football-ball"></i> Sports Scholarship</h3>
+                    <p class="scholarship-amount">Up to 75% Tuition Fee Waiver</p>
+                    <p>For students with national/international level sports achievements</p>
+                </div>
+                <div class="scholarship-card">
+                    <h3><i class="fas fa-award"></i> Talent Scholarship</h3>
+                    <p class="scholarship-amount">Up to 40% Tuition Fee Waiver</p>
+                    <p>For students excelling in arts, music, or cultural activities</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact for Queries -->
+        <section class="admission-contact card">
+            <h2>Have Questions?</h2>
+            <p>Our admissions team is here to help you throughout the application process.</p>
+            <div class="contact-buttons">
+                <button onclick="window.location.href='contact.html'" class="btn btn-primary">Contact Admissions Office</button>
+                <button onclick="downloadBrochure()" class="btn btn-secondary">Download Brochure</button>
+            </div>
+        </section>
+
+        <!-- Admission Application Form -->
+        <section class="application-form-section card">
+            <h2> Online Admission Application</h2>
+            <p class="form-intro">Fill out the form below to apply for admission. All fields marked with * are mandatory.</p>
+            
+            <div id="application-success" class="success-banner hidden">
+                ✓ Application submitted successfully! Your Application ID: <span id="app-id"></span>
+            </div>
+
+            <form id="admission-application-form" class="admission-form">
+                <!-- Personal Information -->
+                <div class="form-section">
+                    <h3 class="form-section-title">Personal Information</h3>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="app-firstname">First Name *</label>
+                            <input type="text" id="app-firstname" name="firstname" required>
+                            <span class="error-message" id="error-firstname"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="app-lastname">Last Name *</label>
+                            <input type="text" id="app-lastname" name="lastname" required>
+                            <span class="error-message" id="error-lastname"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="app-dob">Date of Birth *</label>
+                            <input type="date" id="app-dob" name="dob" required>
+                            <span class="error-message" id="error-dob"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="app-gender">Gender *</label>
+                            <select id="app-gender" name="gender" required>
+                                <option value="">Select Gender</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="other">Other</option>
+                            </select>
+                            <span class="error-message" id="error-gender"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="app-email">Email Address *</label>
+                        <input type="email" id="app-email" name="email" placeholder="your.email@example.com" required>
+                        <span class="error-message" id="error-email"></span>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="app-phone">Phone Number *</label>
+                            <input type="tel" id="app-phone" name="phone" placeholder="10-digit number" required>
+                            <span class="error-message" id="error-phone"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="app-altphone">Alternate Phone</label>
+                            <input type="tel" id="app-altphone" name="altphone" placeholder="Optional">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Address Information -->
+                <div class="form-section">
+                    <h3 class="form-section-title">Address Information</h3>
+                    
+                    <div class="form-group">
+                        <label for="app-address">Street Address *</label>
+                        <textarea id="app-address" name="address" rows="2" required></textarea>
+                        <span class="error-message" id="error-address"></span>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="app-city">City *</label>
+                            <input type="text" id="app-city" name="city" required>
+                            <span class="error-message" id="error-city"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="app-state">State *</label>
+                            <input type="text" id="app-state" name="state" required>
+                            <span class="error-message" id="error-state"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="app-pincode">Pin Code *</label>
+                            <input type="text" id="app-pincode" name="pincode" maxlength="6" required>
+                            <span class="error-message" id="error-pincode"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Academic Information -->
+                <div class="form-section">
+                    <h3 class="form-section-title">Academic Information</h3>
+                    
+                    <div class="form-group">
+                        <label for="app-program">Program Applying For *</label>
+                        <select id="app-program" name="program" required>
+                            <option value="">Select Program</option>
+                            <option value="undergraduate">Undergraduate</option>
+                            <option value="postgraduate">Postgraduate</option>
+                            <option value="doctoral">Doctoral</option>
+                        </select>
+                        <span class="error-message" id="error-program"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="app-course">Preferred Course *</label>
+                        <select id="app-course" name="course" required>
+                            <option value="">Select Course</option>
+                            <option value="Computer Science">Computer Science Engineering</option>
+                            <option value="Business Administration">Business Administration</option>
+                            <option value="Mechanical Engineering">Mechanical Engineering</option>
+                            <option value="Data Science">Data Science</option>
+                            <option value="MBA">Master of Business Administration</option>
+                            <option value="Medicine">Medicine (MBBS)</option>
+                            <option value="English Literature">English Literature</option>
+                            <option value="Civil Engineering">Civil Engineering</option>
+                            <option value="Psychology">Psychology</option>
+                        </select>
+                        <span class="error-message" id="error-course"></span>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="app-lastschool">Last School/College Name *</label>
+                            <input type="text" id="app-lastschool" name="lastschool" required>
+                            <span class="error-message" id="error-lastschool"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="app-passyear">Year of Passing *</label>
+                            <input type="number" id="app-passyear" name="passyear" min="2010" max="2025" required>
+                            <span class="error-message" id="error-passyear"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="app-percentage">Percentage/CGPA *</label>
+                            <input type="text" id="app-percentage" name="percentage" placeholder="e.g., 85% or 8.5 CGPA" required>
+                            <span class="error-message" id="error-percentage"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="app-board">Board/University *</label>
+                            <input type="text" id="app-board" name="board" required>
+                            <span class="error-message" id="error-board"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Additional Information -->
+                <div class="form-section">
+                    <h3 class="form-section-title">Additional Information</h3>
+                    
+                    <div class="form-group">
+                        <label for="app-category">Category</label>
+                        <select id="app-category" name="category">
+                            <option value="">Select Category</option>
+                            <option value="general">General</option>
+                            <option value="obc">OBC</option>
+                            <option value="sc">SC</option>
+                            <option value="st">ST</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox" name="scholarship" id="app-scholarship">
+                            I am interested in scholarship opportunities
+                        </label>
+                    </div>
+
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox" name="hostel" id="app-hostel">
+                            I require hostel accommodation
+                        </label>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="app-extracurricular">Extra-Curricular Activities (Optional)</label>
+                        <textarea id="app-extracurricular" name="extracurricular" rows="3" placeholder="Sports, arts, volunteer work, etc."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="app-statement">Statement of Purpose *</label>
+                        <textarea id="app-statement" name="statement" rows="4" placeholder="Why do you want to join Excellence University? (Minimum 50 characters)" required></textarea>
+                        <span class="error-message" id="error-statement"></span>
+                    </div>
+                </div>
+
+                <!-- Terms and Conditions -->
+                <div class="form-section">
+                    <div class="form-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="terms" id="app-terms" required>
+                            I agree to the <a href="#" onclick="showTerms(); return false;">Terms and Conditions</a> and confirm that all information provided is accurate. *
+                        </label>
+                        <span class="error-message" id="error-terms"></span>
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="form-actions">
+                    <button type="button" onclick="resetApplicationForm()" class="btn btn-secondary">Reset Form</button>
+                    <button type="submit" class="btn btn-primary btn-large">Submit Application</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4><i class="fa fa-globe"></i> Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="admission.html">Admission</a></li>
+                        <li><a href="courses.html">Courses</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4><i class="fas fa-file"></i> Resources</h4>
+                    <ul>
+                        <li><a href="#">Student Portal</a></li>
+                        <li><a href="#">Faculty Directory</a></li>
+                        <li><a href="#">Library</a></li>
+                        <li><a href="#">Campus Map</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4><i class="fa fa-address-book"></i> Connect With Us</h4>
+                    <p>Follow us on social media for latest updates and news</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Excellence University. All rights reserved.</p>
+                <p id="footer-info" class="footer-info"></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Tab switching functionality
+        function showTab(tabName) {
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => content.classList.remove('active'));
+            
+            const buttons = document.querySelectorAll('.tab-button');
+            buttons.forEach(button => button.classList.remove('active'));
+            
+            document.getElementById(tabName).classList.add('active');
+            event.target.classList.add('active');
+        }
+
+        // Download brochure function
+        function downloadBrochure() {
+            if (confirm('This will download the admission brochure. Do you want to continue?')) {
+                alert('Brochure download started! (This is a demo - actual file download would happen in production)');
+                
+                const downloadData = {
+                    timestamp: new Date().toISOString(),
+                    type: 'admission_brochure'
+                };
+                sessionStorage.setItem('last_download', JSON.stringify(downloadData));
+            }
+        }
+
+        // Add animation on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animation = 'fadeInUp 0.6s ease-out';
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.step-card, .date-item, .scholarship-card').forEach(el => {
+                observer.observe(el);
+            });
+
+            // Initialize application form
+            initializeApplicationForm();
+        });
+
+        // Application Form Functions
+        function initializeApplicationForm() {
+            const form = document.getElementById('admission-application-form');
+            if (!form) return;
+
+            // Real-time validation
+            const requiredFields = ['firstname', 'lastname', 'email', 'phone', 'dob', 'gender', 
+                                   'address', 'city', 'state', 'pincode', 'program', 'course', 
+                                   'lastschool', 'passyear', 'percentage', 'board', 'statement'];
+            
+            requiredFields.forEach(fieldName => {
+                const field = document.getElementById(`app-${fieldName}`);
+                if (field) {
+                    field.addEventListener('blur', () => validateApplicationField(fieldName));
+                }
+            });
+
+            // Form submission
+            form.addEventListener('submit', handleApplicationSubmit);
+        }
+
+        function validateApplicationField(fieldName) {
+            const field = document.getElementById(`app-${fieldName}`);
+            const errorElement = document.getElementById(`error-${fieldName}`);
+            if (!field || !errorElement) return true;
+
+            const value = field.value.trim();
+            let errorMessage = '';
+
+            errorElement.textContent = '';
+            field.classList.remove('error');
+
+            switch (fieldName) {
+                case 'firstname':
+                case 'lastname':
+                    if (value.length < 2) {
+                        errorMessage = 'Must be at least 2 characters';
+                    } else if (!/^[a-zA-Z\s]+$/.test(value)) {
+                        errorMessage = 'Only letters allowed';
+                    }
+                    break;
+
+                case 'email':
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailRegex.test(value)) {
+                        errorMessage = 'Invalid email format';
+                    }
+                    break;
+
+                case 'phone':
+                    const phoneRegex = /^[0-9]{10}$/;
+                    if (!phoneRegex.test(value)) {
+                        errorMessage = 'Must be 10 digits';
+                    }
+                    break;
+
+                case 'dob':
+                    const dob = new Date(value);
+                    const today = new Date();
+                    const age = today.getFullYear() - dob.getFullYear();
+                    if (age < 15 || age > 50) {
+                        errorMessage = 'Age must be between 15 and 50';
+                    }
+                    break;
+
+                case 'pincode':
+                    if (!/^[0-9]{6}$/.test(value)) {
+                        errorMessage = 'Must be 6 digits';
+                    }
+                    break;
+
+                case 'passyear':
+                    const year = parseInt(value);
+                    if (year < 2010 || year > 2025) {
+                        errorMessage = 'Year must be between 2010 and 2025';
+                    }
+                    break;
+
+                case 'statement':
+                    if (value.length < 50) {
+                        errorMessage = 'Must be at least 50 characters';
+                    }
+                    break;
+
+                default:
+                    if (value === '') {
+                        errorMessage = 'This field is required';
+                    }
+            }
+
+            if (errorMessage) {
+                errorElement.textContent = errorMessage;
+                field.classList.add('error');
+                return false;
+            }
+
+            return true;
+        }
+
+        function validateApplicationForm() {
+            let isValid = true;
+            const requiredFields = ['firstname', 'lastname', 'email', 'phone', 'dob', 'gender', 
+                                   'address', 'city', 'state', 'pincode', 'program', 'course', 
+                                   'lastschool', 'passyear', 'percentage', 'board', 'statement'];
+
+            requiredFields.forEach(fieldName => {
+                if (!validateApplicationField(fieldName)) {
+                    isValid = false;
+                }
+            });
+
+            // Check terms checkbox
+            const termsCheckbox = document.getElementById('app-terms');
+            const termsError = document.getElementById('error-terms');
+            if (!termsCheckbox.checked) {
+                termsError.textContent = 'You must agree to terms and conditions';
+                isValid = false;
+            } else {
+                termsError.textContent = '';
+            }
+
+            return isValid;
+        }
+
+        async function handleApplicationSubmit(e) {
+            e.preventDefault();
+
+            if (!validateApplicationForm()) {
+                alert('Please fix all errors before submitting.');
+                return;
+            }
+
+            if (!confirm('Are you sure you want to submit this application? Please review all information carefully.')) {
+                return;
+            }
+
+            // Show loading
+            const submitBtn = e.target.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Submitting...';
+            submitBtn.disabled = true;
+
+            // Collect form data using FormData API
+            const formData = new FormData(e.target);
+            const applicationData = {};
+            formData.forEach((value, key) => {
+                applicationData[key] = value;
+            });
+
+            // Add metadata
+            applicationData.applicationId = 'APP' + Date.now();
+            applicationData.submittedAt = new Date().toISOString();
+            applicationData.status = 'pending';
+
+            // Simulate API call
+            await new Promise(resolve => setTimeout(resolve, 2000));
+
+            // Save to localStorage
+            let applications = JSON.parse(localStorage.getItem('applications') || '[]');
+            applications.push(applicationData);
+            localStorage.setItem('applications', JSON.stringify(applications));
+
+            // Show success message
+            const successBanner = document.getElementById('application-success');
+            const appIdSpan = document.getElementById('app-id');
+            appIdSpan.textContent = applicationData.applicationId;
+            successBanner.classList.remove('hidden');
+
+            // Reset form
+            e.target.reset();
+
+            // Scroll to success message
+            successBanner.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+            // Hide success message after 10 seconds
+            setTimeout(() => {
+                successBanner.classList.add('hidden');
+            }, 10000);
+
+            // Reset button
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
+
+            // Track event
+            if (window.utils && window.utils.trackEvent) {
+                window.utils.trackEvent('application_submitted', {
+                    applicationId: applicationData.applicationId,
+                    program: applicationData.program,
+                    course: applicationData.course
+                });
+            }
+        }
+
+        function resetApplicationForm() {
+            if (confirm('Are you sure you want to reset the form? All entered data will be lost.')) {
+                document.getElementById('admission-application-form').reset();
+                
+                // Clear all error messages
+                document.querySelectorAll('.error-message').forEach(el => el.textContent = '');
+                document.querySelectorAll('input, select, textarea').forEach(el => el.classList.remove('error'));
+            }
+        }
+
+        function showTerms() {
+            alert('Terms and Conditions:\n\n1. All information provided must be accurate and truthful.\n2. Submission of false information may result in cancellation of admission.\n3. Application fee is non-refundable.\n4. The university reserves the right to verify all submitted documents.\n5. Admission is subject to availability of seats and meeting eligibility criteria.\n6. Selected candidates will be notified via email and phone.\n\nFor complete terms, please visit our website or contact the admissions office.');
+        }
+
+        // Scroll to application form
+        function scrollToApplicationForm() {
+            const form = document.querySelector('.application-form-section');
+            if (form) {
+                form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                // Focus on first input after scroll
+                setTimeout(() => {
+                    const firstInput = document.getElementById('app-firstname');
+                    if (firstInput) firstInput.focus();
+                }, 800);
+            }
+        }
+    </script>
 </body>
-
 </html>
