@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events - Royal Academy</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="icon" type="image/x-icon"
+            href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRF6grvZdQKFrExTR7WmQd1GfnI5m9ZvvXtcQ&s">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="offline-banner" class="offline-banner hidden">
+       <i class="fa fa-exclamation-triangle"></i>  You are currently offline. Some features may not work.
+    </div>
+
+    <header class="header">
+        <div class="container">
+            <div class="header-top">
+                <div class="logo-section">
+                    <div class="logo-icon"><img src="https://png.pngtree.com/png-vector/20250408/ourmid/pngtree-global-education-logo-with-graduation-cap-and-book-png-image_15929049.png" width="60px"></div>
+                    <div class="logo-text">
+                        <h1>Royal Academy</h1>
+                        <p>Empowering Minds, Enriching Futures</p>
+                    </div>
+                </div>
+                <div class="header-actions">
+                    <span id="current-time" class="time-display"></span>
+                    <span id="screen-info" class="screen-info"></span>
+                    <button id="mobile-menu-toggle" class="mobile-menu-toggle">☰</button>
+                </div>
+            </div>
+            <nav id="main-nav" class="main-nav">
+                <a href="index.html" class="nav-link"> Home</a>
+                <a href="about.html" class="nav-link"> About Us</a>
+                <a href="admission.html" class="nav-link"> Admission</a>
+                <a href="courses.html" class="nav-link"> Courses</a>
+                <a href="events.html" class="nav-link active"> Events</a>
+                <a href="notices.html" class="nav-link"> Notices</a>
+                <a href="contact.html" class="nav-link"> Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container main-content">
+        <div class="page-header">
+            <h1>Upcoming Events</h1>
+            <p class="breadcrumb">Home > Events</p>
+        </div>
+
+        <div id="loading" class="loading-container hidden">
+            <div class="spinner"></div>
+            <p>Loading events...</p>
+        </div>
+
+        <section id="events-container" class="events-container">
+            <!-- Events will be loaded dynamically -->
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4><i class="fa fa-globe"></i> Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="admission.html">Admission</a></li>
+                        <li><a href="courses.html">Courses</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4><i class="fas fa-file"></i> Resources</h4>
+                    <ul>
+                        <li><a href="#">Student Portal</a></li>
+                        <li><a href="#">Faculty Directory</a></li>
+                        <li><a href="#">Library</a></li>
+                        <li><a href="#">Campus Map</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4><i class="fa fa-address-book"></i> Connect With Us</h4>
+                    <p>Follow us on social media for latest updates and news</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Excellence University. All rights reserved.</p>
+                <p id="footer-info" class="footer-info"></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Fetch events using Promise
+        function fetchEvents() {
+            const loading = document.getElementById('loading');
+            const container = document.getElementById('events-container');
+            
+            loading.classList.remove('hidden');
+            
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    const events = [
+                        {
+                            id: 1,
+                            title: 'Open House 2025',
+                            date: '2025-01-15',
+                            time: '10:00 AM - 4:00 PM',
+                            venue: 'Main Campus',
+                            type: 'Campus Tour',
+                            description: 'Visit our campus, meet faculty, and explore facilities. Get all your admission queries answered.',
+                            image: '<i class="fa fa-home"></i>',
+                            status: 'upcoming'
+                        },
+                        {
+                            id: 2,
+                            title: 'Scholarship Information Seminar',
+                            date: '2025-01-22',
+                            time: '2:00 PM - 5:00 PM',
+                            venue: 'Auditorium A',
+                            type: 'Information Session',
+                            description: 'Learn about scholarship opportunities, eligibility criteria, and application process.',
+                            image: '<i class="fas fa-sack-dollar" aria-hidden="true"></i>',
+                            status: 'upcoming'
+                        },
+                        {
+                            id: 3,
+                            title: 'Admission Counseling Day',
+                            date: '2025-02-01',
+                            time: '9:00 AM - 6:00 PM',
+                            venue: 'Admission Office',
+                            type: 'Counseling',
+                            description: 'One-on-one counseling sessions with admission experts. Book your slot now!',
+                            image: '	<i class="fas fa-hands-helping"></i>',
+                            status: 'upcoming'
+                        },
+                        {
+                            id: 4,
+                            title: 'Annual Sports Day',
+                            date: '2025-02-14',
+                            time: 'Full Day',
+                            venue: 'Sports Complex',
+                            type: 'Sports Event',
+                            description: 'Inter-college sports competitions, cultural performances, and awards ceremony.',
+                            image: '<i class="fas fa-trophy"></i>',
+                            status: 'upcoming'
+                        },
+                        {
+                            id: 5,
+                            title: 'Tech Fest 2025',
+                            date: '2025-03-05',
+                            time: '10:00 AM - 8:00 PM',
+                            venue: 'Engineering Block',
+                            type: 'Technical Event',
+                            description: 'Hackathons, robotics competitions, tech talks, and project exhibitions.',
+                            image: '<i class="fa fa-list-alt"></i>',
+                            status: 'upcoming'
+                        },
+                        {
+                            id: 6,
+                            title: 'Cultural Fest - Expressions 2025',
+                            date: '2025-03-20',
+                            time: '5:00 PM - 11:00 PM',
+                            venue: 'Open Air Theatre',
+                            type: 'Cultural Event',
+                            description: 'Music, dance, drama, and art exhibitions by students and professionals.',
+                            image: '<i class="fa-solid fa-masks-theater"></i>',
+                            status: 'upcoming'
+                        }
+                    ];
+                    resolve(events);
+                }, 1200);
+            }).then(events => {
+                displayEvents(events);
+                loading.classList.add('hidden');
+            });
+        }
+
+        // Display events
+        function displayEvents(events) {
+            const container = document.getElementById('events-container');
+            
+            container.innerHTML = events.map(event => {
+                const eventDate = new Date(event.date);
+                const day = eventDate.getDate();
+                const month = eventDate.toLocaleString('default', { month: 'short' });
+                
+                return `
+                    <div class="event-card card">
+                        <div class="event-date-badge">
+                            <div class="event-day">${day}</div>
+                            <div class="event-month">${month}</div>
+                        </div>
+                        <div class="event-content">
+                            <div class="event-header">
+                                <h3>${event.title}</h3>
+                                <span class="event-type-badge">${event.type}</span>
+                            </div>
+                            <p class="event-description">${event.description}</p>
+                            <div class="event-details-grid">
+                                <div class="event-detail">
+                                    <span class="detail-icon" > &#xf017 </span>
+                                    <span>${event.time}</span>
+                                </div>
+                                <div class="event-detail">
+                                    <span class="detail-icon">📍</span>
+                                    <span>${event.venue}</span>
+                                </div>
+                            </div>
+                            <button onclick="registerEvent('${event.title}', '${event.date}')" class="btn btn-primary">
+                                Register for Event
+                            </button>
+                        </div>
+                        <div class="event-icon">${event.image}</div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // Register for event
+        function registerEvent(eventTitle, eventDate) {
+            const confirmed = confirm(`Do you want to register for "${eventTitle}"?`);
+            
+            if (confirmed) {
+                // Store registration in sessionStorage
+                const registration = {
+                    event: eventTitle,
+                    date: eventDate,
+                    timestamp: new Date().toISOString()
+                };
+                
+                sessionStorage.setItem('event_registration', JSON.stringify(registration));
+                
+                alert(`✅ Registration successful for "${eventTitle}"! You will receive a confirmation email shortly.`);
+                
+                // Auto-hide success message after 3 seconds
+                setTimeout(() => {
+                    const banner = document.createElement('div');
+                    banner.className = 'success-banner';
+                    banner.textContent = `Registered for ${eventTitle}`;
+                    document.body.appendChild(banner);
+                    
+                    setTimeout(() => {
+                        banner.remove();
+                    }, 3000);
+                }, 500);
+            }
+        }
+
+        // Load events on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            fetchEvents();
+        });
+    </script>
+</body>
+</html>

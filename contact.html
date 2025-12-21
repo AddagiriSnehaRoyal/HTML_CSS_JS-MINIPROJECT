@@ -1,217 +1,331 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/x-icon"
-    href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRF6grvZdQKFrExTR7WmQd1GfnI5m9ZvvXtcQ&s">
-  <title>Contact Us</title>
-  <style>
-    /* ===== Reset ===== */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    /* ===== Body ===== */
-    body {
-      font-family: "Segoe UI", Roboto, Arial, sans-serif;
-      background-color: #f4f6fb;
-      color: #1f2937;
-      line-height: 1.7;
-      padding: 0;
-    }
-
-    /* ===== Page Title ===== */
-    h1 {
-      text-align: center;
-      font-size: 32px;
-      color: #0a1a36;
-      margin: 30px 0 15px;
-    }
-
-    h3 {
-      color: #0a1a36;
-      margin: 20px auto 10px;
-      max-width: 1000px;
-    }
-
-    /* ===== Divider ===== */
-    hr {
-      border: none;
-      border-top: 2px solid #e5e7eb;
-      margin: 20px auto;
-      max-width: 1000px;
-    }
-
-    /* ===== Address Card ===== */
-    address {
-      font-style: normal;
-      background: #ffffff;
-      max-width: 1000px;
-      margin: 0 auto 25px;
-      padding: 18px 22px;
-      border-radius: 10px;
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
-      border-left: 5px solid #0a1a36;
-      font-size: 15.5px;
-    }
-
-    /* ===== Office Hours ===== */
-    p {
-      max-width: 1000px;
-      margin: 0 auto 20px;
-      font-size: 15.5px;
-    }
-
-    /* ===== Info Table Card ===== */
-    form {
-      background: #ffffff;
-      max-width: 1000px;
-      margin: 0 auto 30px;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
-      border-left: 5px solid #0a1a36;
-    }
-
-    /* ===== Table ===== */
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 14.5px;
-    }
-
-    th {
-      background-color: #0a1a36;
-      color: #ffffff;
-      text-align: left;
-      padding: 12px;
-      font-size: 15px;
-    }
-
-    td {
-      padding: 12px;
-      border-bottom: 1px solid #e5e7eb;
-    }
-
-    tr:hover td {
-      background-color: #f4f6fb;
-    }
-
-    /* ===== Icons ===== */
-    td i {
-      color: #1e40af;
-      margin-right: 6px;
-    }
-
-    /* ===== Back Button ===== */
-    a {
-      display: block;
-      width: fit-content;
-      margin: 10px auto 40px;
-      background-color: #0a1a36;
-      color: #ffffff;
-      padding: 10px 18px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-size: 14.5px;
-      transition: 0.3s ease;
-    }
-
-    a:hover {
-      background-color: #1e40af;
-    }
-
-    /* ===== Responsive ===== */
-    @media (max-width: 768px) {
-      h1 {
-        font-size: 26px;
-      }
-
-      address,
-      form,
-      p {
-        margin: 0 12px 20px;
-        padding: 16px;
-      }
-
-      table {
-        font-size: 13px;
-      }
-
-      th,
-      td {
-        padding: 8px;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Royal Academy</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="icon" type="image/x-icon"
+            href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRF6grvZdQKFrExTR7WmQd1GfnI5m9ZvvXtcQ&s">
+    <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-  <h1>Contact Us</h1>
-  <hr />
-  <address>
-    SJC INSTITUTE OF ENGINEERING <br>
-    MG Road, Bangalore, India<br>
-    Ph: +91-9876543210<br>
-    Email: info@sjccollege.edu<br>
-  </address>
-  <hr />
-  <h3>Office Hours</h3>
-  <p>Monday - Saturday: 9:00 AM to 5:00 PM</p>
-  <hr />
-  <form>
-    <div>
-      <table border="0" cellpadding="8" cellspacing="0">
-        <tr>
-          <th>Visit Us</th>
-          <th>Quick Links</th>
-          <th>Our Group</th>
-        </tr>
-        <tr>
-          <td> <i class="fa-solid fa-location-dot"></i> BB Road, Chickballapur, 562101</td>
-          <td>Computer Science and Engineering</td>
-          <td>SAC Institutions</td>
-        </tr>
-        <tr>
-          <td> <i class='fas fa-phone'></i> 08156 200183</td>
-          <td>Information Science and Engineering</td>
-          <td>SJBIT</td>
-        </tr>
-        <tr>
-          <td> <i class="fa fa-envelope"></i> principal@sjcit.ac.in</td>
-          <td>Electronics and Communications Engineering</td>
-          <td>BGS Sacred</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>Aerospace Engineering</td>
-          <td>BGSIT</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>Mechanical Engineering</td>
-          <td>BGS Group</td>
-        </tr>
-
-
-        </tr>
-      </table>
+    <div id="offline-banner" class="offline-banner hidden">
+        <i class="fa fa-exclamation-triangle"></i> You are currently offline. Some features may not work.
     </div>
-    </details>
-    <hr />
 
-  </form>
+    <div id="success-message" class="success-message hidden">
+        ✓ Form submitted successfully! We will contact you within 24 hours.
+    </div>
 
-  <a href="index.html">⬅ Back to Home</a>
+    <header class="header">
+        <div class="container">
+            <div class="header-top">
+                <div class="logo-section">
+                    <div class="logo-icon"><img src="https://png.pngtree.com/png-vector/20250408/ourmid/pngtree-global-education-logo-with-graduation-cap-and-book-png-image_15929049.png" width="60px"></div>
+                    <div class="logo-text">
+                        <h1>Royal Academy</h1>
+                        <p>Empowering Minds, Enriching Futures</p>
+                    </div>
+                </div>
+                <div class="header-actions">
+                    <span id="current-time" class="time-display"></span>
+                    <span id="screen-info" class="screen-info"></span>
+                    <button id="mobile-menu-toggle" class="mobile-menu-toggle">☰</button>
+                </div>
+            </div>
+            <nav id="main-nav" class="main-nav">
+                <a href="index.html" class="nav-link"> Home</a>
+                <a href="about.html" class="nav-link"> About Us</a>
+                <a href="admission.html" class="nav-link"> Admission</a>
+                <a href="courses.html" class="nav-link"> Courses</a>
+                <a href="events.html" class="nav-link"> Events</a>
+                <a href="notices.html" class="nav-link"> Notices</a>
+                <a href="contact.html" class="nav-link active"> Contact</a>
+            </nav>
+        </div>
+    </header>
 
-  <script src="js/main.js"></script>
-  <script src="js/ui.js"></script>
-  <script src="js/form.js"></script>
+    <main class="container main-content">
+        <div class="page-header">
+            <h1>Contact Us</h1>
+            <p class="breadcrumb">Home > Contact</p>
+        </div>
 
+        <div class="contact-container">
+            <!-- Contact Form -->
+            <section class="contact-form-section card">
+                <h2>Send us a Message</h2>
+                <form id="enquiry-form" class="enquiry-form">
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                        <span class="error-message" id="error-name"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+                        <span class="error-message" id="error-email"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" placeholder="10-digit mobile number" required>
+                        <span class="error-message" id="error-phone"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="course">Course of Interest *</label>
+                        <select id="course" name="course" required>
+                            <option value="">Select a course</option>
+                            <option value="Computer Science">Computer Science Engineering</option>
+                            <option value="Business Administration">Business Administration</option>
+                            <option value="Mechanical Engineering">Mechanical Engineering</option>
+                            <option value="Data Science">Data Science</option>
+                            <option value="MBA">Master of Business Administration</option>
+                            <option value="Medicine">Medicine (MBBS)</option>
+                            <option value="English Literature">English Literature</option>
+                            <option value="Civil Engineering">Civil Engineering</option>
+                            <option value="Psychology">Psychology</option>
+                        </select>
+                        <span class="error-message" id="error-course"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Tell us about your interests and queries..." required></textarea>
+                        <span class="error-message" id="error-message"></span>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-large">Submit Enquiry</button>
+                </form>
+            </section>
+
+            <!-- Contact Information -->
+            <section class="contact-info-section">
+                <div class="contact-info-card card">
+                    <h3 >  <i class="fa-solid fa-location-dot"></i> Address</h3>
+                    <p>Royal Academy Avenue<br>
+                    Ananthapur, Andhra Pradesh 515661<br>
+                    India</p>
+                </div>
+
+                <div class="contact-info-card card">
+                    <h3> <i class='fas fa-phone'></i> Phone</h3>
+                    <p>Main Office: +1 (555) 123-4567<br>
+                    Admissions: +1 (555) 987-6543<br>
+                    Toll Free: 1800-123-4567</p>
+                </div>
+
+                <div class="contact-info-card card">
+                    <h3><i class="fa fa-envelope"></i> Email</h3>
+                    <p>General: info@royalacademy.edu<br>
+                    Admissions: admissions@royalacademy.edu<br>
+                    Support: support@royalacademy.edu</p>
+                </div>
+
+                <div class="contact-info-card card">
+                    <h3><i class="fas fa-clock"></i> Office Hours</h3>
+                    <p>Monday - Friday: 9:00 AM - 5:00 PM<br>
+                    Saturday: 10:00 AM - 2:00 PM<br>
+                    Sunday: Closed</p>
+                </div>
+
+                <div class="contact-info-card card">
+                    <h3><i class="fas fa-users"></i>  Connect With Us</h3>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com" class="social-link"> Facebook</a>
+                        <a href="https://x.com" class="social-link"> Twitter</a>
+                        <a href="https://in.linkedin.com" class="social-link"> LinkedIn</a>
+                        <a href="https://www.instagram.com" class="social-link">Instagram</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4><i class="fa fa-globe"></i> Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="admission.html">Admission</a></li>
+                        <li><a href="courses.html">Courses</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4><i class="fas fa-file"></i> Resources</h4>
+                    <ul>
+                        <li><a href="#">Student Portal</a></li>
+                        <li><a href="#">Faculty Directory</a></li>
+                        <li><a href="#">Library</a></li>
+                        <li><a href="#">Campus Map</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4><i class="fa fa-address-book"></i> Connect With Us</h4>
+                    <p>Follow us on social media for latest updates and news</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Excellence University. All rights reserved.</p>
+                <p id="footer-info" class="footer-info"></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Form validation and submission
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('enquiry-form');
+            
+            // Pre-fill course if selected from courses page
+            const selectedCourse = localStorage.getItem('selected_course');
+            if (selectedCourse) {
+                document.getElementById('course').value = selectedCourse;
+                localStorage.removeItem('selected_course');
+            }
+
+            // Form submission
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Validate form
+                if (validateForm()) {
+                    // Get form data using FormData API
+                    const formData = new FormData(form);
+                    const data = {};
+                    
+                    formData.forEach((value, key) => {
+                        data[key] = value;
+                    });
+                    
+                    // Confirm submission using BOM
+                    if (window.confirm('Are you sure you want to submit this enquiry?')) {
+                        submitForm(data);
+                    }
+                }
+            });
+
+            // Real-time validation
+            ['name', 'email', 'phone', 'course', 'message'].forEach(field => {
+                document.getElementById(field).addEventListener('blur', function() {
+                    validateField(field);
+                });
+            });
+        });
+
+        // Validate entire form
+        function validateForm() {
+            let isValid = true;
+            const fields = ['name', 'email', 'phone', 'course', 'message'];
+            
+            fields.forEach(field => {
+                if (!validateField(field)) {
+                    isValid = false;
+                }
+            });
+            
+            return isValid;
+        }
+
+        // Validate individual field
+        function validateField(fieldName) {
+            const field = document.getElementById(fieldName);
+            const errorElement = document.getElementById(`error-${fieldName}`);
+            const value = field.value.trim();
+            let errorMessage = '';
+            
+            // Clear previous error
+            errorElement.textContent = '';
+            field.classList.remove('error');
+            
+            // Validation rules
+            switch (fieldName) {
+                case 'name':
+                    if (value.length < 3) {
+                        errorMessage = 'Name must be at least 3 characters long';
+                    } else if (!/^[a-zA-Z\s]+$/.test(value)) {
+                        errorMessage = 'Name can only contain letters and spaces';
+                    }
+                    break;
+                    
+                case 'email':
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailRegex.test(value)) {
+                        errorMessage = 'Please enter a valid email address';
+                    }
+                    break;
+                    
+                case 'phone':
+                    const phoneRegex = /^[0-9]{10}$/;
+                    if (!phoneRegex.test(value)) {
+                        errorMessage = 'Phone number must be exactly 10 digits';
+                    }
+                    break;
+                    
+                case 'course':
+                    if (value === '') {
+                        errorMessage = 'Please select a course';
+                    }
+                    break;
+                    
+                case 'message':
+                    if (value.length < 10) {
+                        errorMessage = 'Message must be at least 10 characters long';
+                    }
+                    break;
+            }
+            
+            // Show error if any
+            if (errorMessage) {
+                errorElement.textContent = errorMessage;
+                field.classList.add('error');
+                return false;
+            }
+            
+            return true;
+        }
+
+        // Submit form (async simulation)
+        async function submitForm(data) {
+            // Show loading state
+            const submitBtn = document.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Submitting...';
+            submitBtn.disabled = true;
+            
+            // Simulate API call
+            await new Promise(resolve => setTimeout(resolve, 1500));
+            
+            // Store in sessionStorage
+            data.timestamp = new Date().toISOString();
+            sessionStorage.setItem('enquiry_data', JSON.stringify(data));
+            
+            // Show success message
+            const successMessage = document.getElementById('success-message');
+            successMessage.classList.remove('hidden');
+            
+            // Reset form
+            document.getElementById('enquiry-form').reset();
+            
+            // Hide success message after 5 seconds
+            setTimeout(() => {
+                successMessage.classList.add('hidden');
+            }, 5000);
+            
+            // Reset button
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
+            
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
 </body>
-
 </html>

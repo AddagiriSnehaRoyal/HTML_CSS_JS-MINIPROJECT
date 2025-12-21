@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notices - Royal Academy</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="icon" type="image/x-icon"
+            href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRF6grvZdQKFrExTR7WmQd1GfnI5m9ZvvXtcQ&s">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="offline-banner" class="offline-banner hidden">
+        <i class="fa fa-exclamation-triangle"></i> You are currently offline. Some features may not work.
+    </div>
+
+    <header class="header">
+        <div class="container">
+            <div class="header-top">
+                <div class="logo-section">
+                    <div class="logo-icon"><img src="https://png.pngtree.com/png-vector/20250408/ourmid/pngtree-global-education-logo-with-graduation-cap-and-book-png-image_15929049.png" width="60px"></div>
+                    <div class="logo-text">
+                        <h1>Royal Academy</h1>
+                        <p>Empowering Minds, Enriching Futures</p>
+                    </div>
+                </div>
+                <div class="header-actions">
+                    <span id="current-time" class="time-display"></span>
+                    <span id="screen-info" class="screen-info"></span>
+                    <button id="mobile-menu-toggle" class="mobile-menu-toggle">☰</button>
+                </div>
+            </div>
+            <nav id="main-nav" class="main-nav">
+                <a href="index.html" class="nav-link"> Home</a>
+                <a href="about.html" class="nav-link"> About Us</a>
+                <a href="admission.html" class="nav-link"> Admission</a>
+                <a href="courses.html" class="nav-link"> Courses</a>
+                <a href="events.html" class="nav-link"> Events</a>
+                <a href="notices.html" class="nav-link active"> Notices</a>
+                <a href="contact.html" class="nav-link"> Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container main-content">
+        <div class="page-header">
+            <h1>Notice Board</h1>
+            <p class="breadcrumb">Home > Notices</p>
+        </div>
+
+        <div id="loading" class="loading-container hidden">
+            <div class="spinner"></div>
+            <p>Loading notices...</p>
+        </div>
+
+        <section id="notices-container" class="notices-container">
+            <!-- Notices will be loaded dynamically -->
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4><i class="fa fa-globe"></i> Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="admission.html">Admission</a></li>
+                        <li><a href="courses.html">Courses</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4><i class="fas fa-file"></i> Resources</h4>
+                    <ul>
+                        <li><a href="#">Student Portal</a></li>
+                        <li><a href="#">Faculty Directory</a></li>
+                        <li><a href="#">Library</a></li>
+                        <li><a href="#">Campus Map</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4><i class="fa fa-address-book"></i> Connect With Us</h4>
+                    <p>Follow us on social media for latest updates and news</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Excellence University. All rights reserved.</p>
+                <p id="footer-info" class="footer-info"></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Fetch notices using callback pattern
+        function fetchNotices(callback) {
+            const loading = document.getElementById('loading');
+            loading.classList.remove('hidden');
+            
+            setTimeout(() => {
+                const notices = [
+                    {
+                        id: 1,
+                        title: 'Admission Forms for 2025 Batch Released',
+                        content: 'Online admission forms for the 2025-26 academic year are now available on the university portal. Interested candidates can fill and submit the forms along with required documents before the deadline of March 31, 2025.',
+                        date: '2025-01-10',
+                        category: 'Admission',
+                        priority: 'high'
+                    },
+                    {
+                        id: 2,
+                        title: 'Document Verification Schedule',
+                        content: 'All applicants are required to complete document verification process between January 25-30, 2025. Please bring original certificates along with one set of photocopies. Venue: Admission Office, Ground Floor.',
+                        date: '2025-01-12',
+                        category: 'Important',
+                        priority: 'high'
+                    },
+                    {
+                        id: 3,
+                        title: 'Early Bird Discount on Tuition Fees',
+                        content: 'Students who confirm their admission and pay the first installment before January 20, 2025 will receive a 10% discount on their total tuition fees for the first year. This is a limited time offer.',
+                        date: '2025-01-08',
+                        category: 'Announcement',
+                        priority: 'medium'
+                    },
+                    {
+                        id: 4,
+                        title: 'Scholarship Application Deadline Extended',
+                        content: 'The deadline for scholarship applications has been extended to February 15, 2025. Eligible students can apply through the student portal. Required documents include academic transcripts and income certificate.',
+                        date: '2025-01-14',
+                        category: 'Scholarship',
+                        priority: 'medium'
+                    },
+                    {
+                        id: 5,
+                        title: 'Campus Placement Drive Schedule',
+                        content: 'Final year students are informed that the campus placement drive will commence from March 1, 2025. Companies visiting include Microsoft, Amazon, TCS, Infosys, and 50+ other organizations. Register on the placement portal.',
+                        date: '2025-01-09',
+                        category: 'Placement',
+                        priority: 'medium'
+                    },
+                    {
+                        id: 6,
+                        title: 'Library Timing Update',
+                        content: 'The central library will now remain open 24x7 during the examination period (February 1-28, 2025) for the convenience of students. Additional study spaces have been arranged.',
+                        date: '2025-01-11',
+                        category: 'Facility',
+                        priority: 'low'
+                    },
+                    {
+                        id: 7,
+                        title: 'Health Check-up Camp',
+                        content: 'A free health check-up camp will be organized on January 18, 2025 in collaboration with City Hospital. All students and staff are encouraged to participate. Registration is open at the medical center.',
+                        date: '2025-01-07',
+                        category: 'Health',
+                        priority: 'low'
+                    }
+                ];
+                callback(notices);
+                loading.classList.add('hidden');
+            }, 800);
+        }
+
+        // Display notices
+        function displayNotices(notices) {
+            const container = document.getElementById('notices-container');
+            
+            container.innerHTML = notices.map(notice => {
+                const priorityClass = `priority-${notice.priority}`;
+                const noticeDate = new Date(notice.date);
+                const formattedDate = noticeDate.toLocaleDateString('en-US', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric'
+                });
+                
+                return `
+                    <div class="notice-card card ${priorityClass}">
+                        <div class="notice-header">
+                            <div>
+                                <h3>${notice.title}</h3>
+                                <div class="notice-meta">
+                                    <span class="notice-category">${notice.category}</span>
+                                    <span class="notice-date"> ${formattedDate}</span>
+                                </div>
+                            </div>
+                            <button onclick="copyNotice('${notice.id}')" class="copy-btn" title="Copy to clipboard">
+                                
+                            </button>
+                        </div>
+                        <p class="notice-content" id="notice-${notice.id}">${notice.content}</p>
+                        <div class="notice-actions">
+                            <button onclick="downloadNotice('${notice.title}')" class="btn btn-secondary btn-sm">
+                                Download PDF
+                            </button>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // Copy notice to clipboard using Clipboard API
+        async function copyNotice(noticeId) {
+            const noticeElement = document.getElementById(`notice-${noticeId}`);
+            const text = noticeElement.textContent;
+            
+            try {
+                await navigator.clipboard.writeText(text);
+                showCopySuccess();
+            } catch (err) {
+                // Fallback for browsers that don't support Clipboard API
+                const textArea = document.createElement('textarea');
+                textArea.value = text;
+                textArea.style.position = 'fixed';
+                textArea.style.left = '-999999px';
+                document.body.appendChild(textArea);
+                textArea.select();
+                
+                try {
+                    document.execCommand('copy');
+                    showCopySuccess();
+                } catch (err) {
+                    alert('Failed to copy text');
+                }
+                
+                document.body.removeChild(textArea);
+            }
+        }
+
+        // Show copy success message
+        function showCopySuccess() {
+            const banner = document.createElement('div');
+            banner.className = 'success-banner';
+            banner.textContent = '✓ Notice copied to clipboard!';
+            banner.style.cssText = 'position: fixed; top: 80px; right: 20px; background: #10b981; color: white; padding: 15px 25px; border-radius: 8px; z-index: 1000; animation: slideIn 0.3s ease-out;';
+            document.body.appendChild(banner);
+            
+            setTimeout(() => {
+                banner.style.animation = 'slideOut 0.3s ease-out';
+                setTimeout(() => banner.remove(), 300);
+            }, 2000);
+        }
+
+        // Download notice as PDF (simulation)
+        function downloadNotice(title) {
+            if (confirm(`Download notice: "${title}"?`)) {
+                alert(' Download started! (In production, this would generate a PDF file)');
+                
+                // Store download info in sessionStorage
+                const downloadInfo = {
+                    title: title,
+                    timestamp: new Date().toISOString()
+                };
+                sessionStorage.setItem('last_notice_download', JSON.stringify(downloadInfo));
+            }
+        }
+
+        // Load notices on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            fetchNotices((notices) => {
+                displayNotices(notices);
+            });
+        });
+    </script>
+</body>
+</html>
